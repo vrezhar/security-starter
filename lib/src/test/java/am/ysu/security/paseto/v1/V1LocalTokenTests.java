@@ -107,8 +107,7 @@ public class V1LocalTokenTests {
     }
 
     @Test
-    void testTokenClassWithRawStrings()
-    {
+    void testTokenClassWithRawStrings() {
         final ByteBuffer buffer = ByteBuffer.wrap(new byte[16]);
         final UUID uuid = UUID.randomUUID();
         buffer.putLong(uuid.getMostSignificantBits());

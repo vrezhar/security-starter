@@ -94,7 +94,7 @@ public class EcJWK extends BaseJWK {
     public ECPublicKey toPublicKey() throws InvalidKeySpecException {
         final var keyFactory = KeyUtils.getEccKeyFactory();
         final var w = new ECPoint(ecPointX, ecPointY);
-        return (ECPublicKey)keyFactory.generatePublic(new ECPublicKeySpec(w, NistEcCurve.P256.getParameterSpec()));
+        return (ECPublicKey)keyFactory.generatePublic(new ECPublicKeySpec(w, NistEcCurve.forName(algorithm).getParameterSpec()));
     }
 
     public static EcJWK from(ECPublicKey publicKey, String fingerprintAlgorithm) throws NoSuchAlgorithmException {

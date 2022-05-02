@@ -8,11 +8,9 @@ import java.nio.charset.StandardCharsets;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class HkdfTests
-{
+public class HkdfTests {
     @Test
-    void testHkdfExtraction()
-    {
+    void testHkdfExtraction() {
         final byte[] input = "hello".getBytes(StandardCharsets.ISO_8859_1);
         final byte[] info = "signer-info".getBytes(StandardCharsets.ISO_8859_1);
         final byte[] salt = "1234".getBytes(StandardCharsets.ISO_8859_1);

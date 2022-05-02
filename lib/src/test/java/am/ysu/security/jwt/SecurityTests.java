@@ -10,11 +10,9 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SecurityTests
-{
+public class SecurityTests {
     @Test
-    void testEncryptionAndDecryption()
-    {
+    void testEncryptionAndDecryption() {
         IvParameterSpec iv = SecretKeyHelper.generateIVParameterSpec();
         String testData = "test";
         byte[] salt = new byte[]{
@@ -24,7 +22,7 @@ public class SecurityTests
                 0, 0, 0, 0,
         };
         String password = UUID.randomUUID().toString();
-        try{
+        try {
             String encrypted = HashingAndEncryptionHelper.encryptUsingPassword(testData, password, salt, iv).encryptedData;
             assertNotNull(encrypted);
             assertNotEquals(encrypted, testData);
